@@ -1,0 +1,50 @@
+/*this is the question 1 of the assessment 1, of this trimester
+we are going, into this asseignment, to ask the student for his mark, 
+since he entered his mark we will tell him if he passed or not and what is his percentage and which grade he had got*/
+
+#include<iostream>//this is the library which is used for output and input and many others
+#include<iomanip>// this is the library for setprecision the decimal number and fix them on the second or the third depend on what is needed
+
+using namespace std;// this namespace helps us not to be using every single cout, cin, endl and etc... preceeded by std::
+
+
+//this is the main function which we are going to use in this whole assignment
+int main()
+{
+	float mark=0;//mark is meant to be between 0 and 50
+
+	float percentage;// the percentage is the mark multiplied by 100 divided by 50 same as multiplied by 2
+
+	cout << "Please enter your mark: ";
+	cin >> mark;
+	percentage = mark * 2;
+	if (mark >= 0 && mark <= 50)//the mark is meant to be between 0 and 50 or equal to them not greater nor less
+	
+		if (percentage >= 0 && percentage < 60)//if the percentage less than 60 % the guy has failed 
+			cout << "Unfortunately, You have failed with " << fixed << setprecision(2) <<percentage << "%, and received a grade F" << endl;
+		
+		else if (percentage >= 60 && percentage < 70)//if the percentage is higher than or equal to 60 and less than 70 the student will get a grade D
+			cout << "You have passed with " << fixed << setprecision(2) << percentage << "%, and received a grade D" << endl;
+		
+		else if (percentage >=70 && percentage <80)//if the percentage is higher than or equal to 70 and less than 80 the student will get a grade C
+			cout << "You have passed with " << fixed << setprecision(2) << percentage << "%, and received a grade C" << endl;
+		
+		else if (percentage >=80 && percentage < 90)//if the percentage is higher than or equal to 80 and less than 90 the student will get a grade B
+			cout << "You have passed with " << fixed << setprecision(2) << percentage << "%, and received a grade B" << endl;
+		
+		else //if the percentage is higher than or equal to 90 the student will get a grade D
+			cout << "You have passed with " << fixed << setprecision(2) << percentage << "%, and received a grade A" << endl;
+
+
+
+	else if (mark > 50)
+		cout << "Score is greater than 50" << endl;
+	
+	else
+		cout << "Sorry, score is less than 0, your score might be between 0 and 50" << endl;
+
+
+
+	system("pause");
+	return 0; // this is where the value of the main function meant to be returned 0
+}
